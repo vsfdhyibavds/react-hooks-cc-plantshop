@@ -25,6 +25,22 @@ find the [Core Deliverables](#Core-Deliverables) section.
 Make sure to open [http://localhost:6001/plants](http://localhost:6001/plants)
 in the browser to verify that your backend is working before you proceed!
 
+### Troubleshooting
+
+- If you get an error that port 6001 is already in use, you can run the server on a different port by using the alternative script:
+  ```
+  npm run server-alt
+  ```
+  This will start the server on port 6002.
+
+- If you get an error that `json-server` is not found, make sure you have run:
+  ```
+  npm install
+  ```
+  to install all dependencies.
+
+- If you encounter permission issues or other errors, try running the command with appropriate permissions or check for conflicting processes using port 6001 or 6002.
+
 ## Endpoints
 
 The base URL for your backend is: `http://localhost:6001`
@@ -147,4 +163,3 @@ Example Response:
 
 ```json
 {}
-```
