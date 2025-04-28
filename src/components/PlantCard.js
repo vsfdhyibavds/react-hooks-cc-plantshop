@@ -2,7 +2,9 @@ import React, { useState } from "react";
 
 function PlantCard({ plant, onUpdatePlant, onDeletePlant }) {
   const [isEditingPrice, setIsEditingPrice] = useState(false);
-  const [price, setPrice] = useState(plant.price);
+  const [price, setPrice] = useState(
+    typeof plant.price === "number" ? plant.price : parseFloat(plant.price)
+  );
 
   function handleSoldOutToggle() {
     const updatedPlant = { ...plant, soldOut: !plant.soldOut };
@@ -68,7 +70,7 @@ function PlantCard({ plant, onUpdatePlant, onDeletePlant }) {
         </form>
       ) : (
         <p>
-          Price: ${plant.price.toFixed(2)}{" "}
+          {`Price: ${price.toFixed(2)} `}
           <button onClick={() => setIsEditingPrice(true)}>Edit</button>
         </p>
       )}
